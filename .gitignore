@@ -1,0 +1,40 @@
+# Django
+*.log
+*.pot
+*.pyc
+**/__pycache__/
+local_settings.py
+
+# Database
+db.sqlite3
+
+# Static files
+/static/
+
+# Media files
+/media/
+
+# Virtual environment
+env/
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# Compiled Python files
+*.pyc
+*.pyo
+*.pyd
+
+# Test coverage
+htmlcov/
+
+# Translations
+*.mo
+
+# Documentation
+docs/_build/
+
+# Ignore migrations
+**/migrations/
