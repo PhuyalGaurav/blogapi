@@ -1,15 +1,15 @@
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+
 from .models import CustomUser
 
-class CustomUserCreationFrom(UserCreationForm):
-    class Meta(UserCreationForm.Meta):
+
+class CustomUserCreationForm(UserCreationForm):
+    class Meta(UserCreationForm):
         model = CustomUser
-        if UserChangeForm.Meta.fields == '__all__':
-            fields = '__all__'
-        else:
-            fields = list(UserChangeForm.Meta.fields.split(',')) + ["name"]
+        fields = UserCreationForm.Meta.fields + ("name",)
+
 
 class CustomUserChangeForm(UserChangeForm):
-    class Meta(UserChangeForm):
+    class Meta:
         model = CustomUser
         fields = UserChangeForm.Meta.fields

@@ -20,10 +20,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Third Party's
     'rest_framework',
-    'corsheaders'
+    'corsheaders',
     # Local Apps
     'accounts.apps.AccountsConfig',
-    'posts.apps.PostsConfig'
+    'posts.apps.PostsConfig',
 ]
 
 MIDDLEWARE = [
@@ -99,7 +99,7 @@ AUTH_USER_MODEL = "accounts.CustomUser"
 
 REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": [
-        "rest_framework.permissions.AllowAny",
+        "rest_framework.permissions.IsAuthenticated",
     ],
 }
 
