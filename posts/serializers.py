@@ -1,5 +1,7 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
+
+
 from .models import Post
 
 
@@ -15,4 +17,6 @@ class UserSerializer(serializers.ModelSerializer):
             "id",
             "username",
         ]
+
         model = get_user_model()
+
