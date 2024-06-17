@@ -1,6 +1,5 @@
-
 from rest_framework import viewsets, permissions
-
+from rest_framework.permissions import IsAdminUser
 from django.contrib.auth import get_user_model
 
 # Local
@@ -17,7 +16,8 @@ class PostViewSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)
 
-        
+
 class UserViewSet(viewsets.ModelViewSet):
+    permission_classes = (IsAdminUser,)
     serializer_class = UserSerializer
     queryset = get_user_model().objects.all()
