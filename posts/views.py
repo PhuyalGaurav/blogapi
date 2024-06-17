@@ -1,4 +1,6 @@
+
 from rest_framework import viewsets, permissions
+
 from django.contrib.auth import get_user_model
 
 # Local
@@ -15,7 +17,7 @@ class PostViewSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)
 
-
+        
 class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
     queryset = get_user_model().objects.all()
