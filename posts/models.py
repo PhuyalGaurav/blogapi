@@ -1,5 +1,7 @@
 from django.db import models
 from django.conf import settings
+
+
 # Create your models here.
 class Post(models.Model):
     title = models.CharField(max_length=150)
@@ -8,8 +10,6 @@ class Post(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     active = models.BooleanField(default=True)
-    
+
     def __str__(self) -> str:
         return f"{self.title} - {self.author}"
-    
-
